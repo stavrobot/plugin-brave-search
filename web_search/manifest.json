@@ -1,0 +1,11 @@
+{
+  "name": "web_search",
+  "description": "Search the web using Brave Search and return relevant snippets, titles, and URLs.",
+  "entrypoint": "run.py",
+  "parameters": {
+    "query": {
+      "type": "string",
+      "description": "The search query."
+    }
+  }
+}
