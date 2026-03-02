@@ -23,3 +23,11 @@ Search the web and return relevant results with snippets.
 **Parameters:**
 
 - `query` (string, required): The search query.
+
+### brave_answer
+
+Ask a question and get an AI-generated answer backed by Brave web search.
+
+**Parameters:**
+
+- `question` (string, required): The question to answer.

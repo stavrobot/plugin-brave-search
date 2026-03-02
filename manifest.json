@@ -1,6 +1,6 @@
 {
   "name": "brave-search",
-  "description": "Search the web using the Brave Search API.",
+  "description": "Search the web (or get answers from it) using the Brave Search API.",
   "config": {
     "api_key": {
       "description": "Brave Search API subscription token.",

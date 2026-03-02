@@ -1,0 +1,11 @@
+{
+  "name": "brave_answer",
+  "description": "Ask a question and get an AI-generated answer backed by Brave web search.",
+  "entrypoint": "run.py",
+  "parameters": {
+    "question": {
+      "type": "string",
+      "description": "The question to answer."
+    }
+  }
+}
