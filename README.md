@@ -16,7 +16,7 @@ You can get a subscription token from [Brave Search API](https://brave.com/searc
 
 ## Tools
 
-### web_search
+### search
 
 Search the web and return relevant results with snippets.
 
