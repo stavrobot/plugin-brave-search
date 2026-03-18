@@ -5,6 +5,10 @@
     "api_key": {
       "description": "Brave Search API subscription token.",
       "required": true
+    },
+    "answer_api_key": {
+      "description": "Optional. API key for Brave Answer API. If not set, the main api_key is used.",
+      "required": false
     }
   }
 }

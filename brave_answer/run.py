@@ -12,13 +12,24 @@ KNOWN_PARAMS = {"question"}
 
 
 def load_api_key() -> str:
-    """Read the Brave API subscription token from the plugin config."""
+    """Read the Brave API subscription token from the plugin config.
+
+    Prefers ``answer_api_key`` when present; falls back to ``api_key``.
+    """
     config_path = Path("../config.json")
     if not config_path.exists():
-        print("config.json not found. Configure the plugin with your Brave API key.", file=sys.stderr)
+        print(
+            "config.json not found. Configure the plugin with your Brave API key.",
+            file=sys.stderr,
+        )
         sys.exit(1)
     config = json.loads(config_path.read_text())
-    api_key = config.get("api_key")
+    answer_api_key = config.get("answer_api_key")
+    api_key = (
+        answer_api_key
+        if isinstance(answer_api_key, str) and answer_api_key
+        else config.get("api_key")
+    )
     if not api_key:
         print("api_key is missing or empty in config.json.", file=sys.stderr)
         sys.exit(1)
@@ -41,7 +52,10 @@ def answer(question: str, api_key: str) -> dict:
         timeout=20,
     )
     if response.status_code != 200:
-        print(f"Brave API returned status {response.status_code}: {response.text}", file=sys.stderr)
+        print(
+            f"Brave API returned status {response.status_code}: {response.text}",
+            file=sys.stderr,
+        )
         sys.exit(1)
     return response.json()
 
