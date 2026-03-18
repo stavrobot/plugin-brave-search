@@ -8,11 +8,18 @@ Tell Stavrobot to install this plugin:
 
 > Install the plugin at https://github.com/stavrobot/plugin-brave-search
 
-Then configure it with your Brave Search API subscription token:
+Then configure it with your Brave Search API key:
 
 > Configure the brave-search plugin with API key `<your key>`
 
-You can get a subscription token from [Brave Search API](https://brave.com/search/api/).
+- **`api_key`** (required) — used for the `search` tool and as a fallback for `brave_answer`.
+- **`answer_api_key`** (optional) — if set, used for the `brave_answer` tool instead of `api_key`.
+
+Brave now issues separate keys for its Search and Answer products. If you have both, set `answer_api_key` to your Answer API key:
+
+> Configure the brave-search plugin with answer API key `<your answer key>`
+
+You can obtain keys from [Brave Search API](https://brave.com/search/api/).
 
 ## Tools
 
